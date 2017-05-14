@@ -1,0 +1,20 @@
+<div align="center">
+	<h1 align="center">Cadastro</h1>
+	<br>
+	<br>
+	<form name="formCadastro">
+		<label>Nome:</label>
+		<input type="text" name="nome" ng-model="usuario.nome">
+		<br>
+		<br>
+		<label>Email:</label>
+		<input type="email" name="email" ng-model="usuario.email">
+		<br>
+		<br>
+		<label>Senha:</label>
+		<input type="password" name="senha" ng-model="usuario.senha">
+		<br>
+		<br>
+		<button ng-click="cadastro(usuario)">Cadastrar</button>
+	</form>
+</div>
