@@ -1,4 +1,4 @@
-from flask import Flask, request, make_response
+from flask import Flask, request, make_response, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -24,7 +24,8 @@ db.create_all()
 def user(id=None):
     if request.method == "GET":
         usuarios = Usuario.query.all()
-        return make_response(str(usuarios))
+        response = make_response(jsonify(usuarios))
+        return response
     elif request.method == "POST":
         usuario = request.json
         u = Usuario(nome=usuario.nome, email=usuario.email, senha=usuario.senha)
